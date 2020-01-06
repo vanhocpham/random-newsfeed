@@ -52,8 +52,6 @@ app.use( cors( {
 app.use( bodyParser.json( { "extended": true } ) );
 app.use( bodyParser.urlencoded( { "extended": false } ) );
 
-// create log on server
-// app.use( logger( "dev" ) );
 
 // create route api
 app.use( "/api/v1", api );
