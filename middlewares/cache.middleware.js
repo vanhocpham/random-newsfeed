@@ -10,6 +10,7 @@ module.exports = {
           console.log(err);
           res.status(500).send(err);
       }
+      console.log( JSON.parse( data ) );
       //if no match found
       if (data != null) {
           res.send(data);

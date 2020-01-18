@@ -43,6 +43,11 @@ const mongoose = require( "mongoose" ),
       "type": Schema.Types.ObjectId,
       "ref": "PostCategory"
     },
+    "like": {
+      "type": Number,
+      "default": 0
+    },
+    "share": Number,
     "createdAt": String,
     "updatedAt": String,
   } );

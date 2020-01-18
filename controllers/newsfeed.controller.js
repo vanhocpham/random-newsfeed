@@ -25,7 +25,7 @@ module.exports = {
     res.send( findPost );
   },
   "getPostById": async ( req, res ) => {
-    const findPost = await Post.findOne( { "_id": req.params.id } ).catch( ( e ) => console.log(e ) );
+    const findPost = await Post.findOne( { "_id": req.params.id } ).populate( "_postCategory" ).catch( ( e ) => console.log(e ) );
 
     if ( !findPost ) {
       res.send( "Not Found!" );
@@ -34,6 +34,9 @@ module.exports = {
     //add data to Redis
     await redisClient.setex(req.params.id, 3600, JSON.stringify(findPost));
 
-    // res.send( findPost );
+    res.send( findPost );
   }
 }
+
+
+
