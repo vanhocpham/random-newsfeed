@@ -35,6 +35,12 @@ module.exports = {
     await redisClient.setex(req.params.id, 3600, JSON.stringify(findPost));
 
     res.send( findPost );
+  },
+
+  "getPostID": async ( req, res ) => {
+    const getPost = await Post.findById( req.params._id );
+
+    res.status( 200 ).send( { "data": getPost } );
   }
 }
 
