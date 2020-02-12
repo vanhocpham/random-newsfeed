@@ -10,6 +10,7 @@ const logger = require( "morgan" );
 const api = require( "./routes" );
 const mongoose = require( "mongoose" );
 const dotenv = require( "dotenv" );
+const helmet = require( "helmet" );
 
 let server = null;
 
@@ -40,6 +41,9 @@ mongoose.set( "useFindAndModify", false );
 app.set( "port", process.env.PORT_BASE );
 
 app.use(logger('dev'))
+
+// helmet security
+app.use( helmet() );
 
 // handle cors
 app.use( cors( {
