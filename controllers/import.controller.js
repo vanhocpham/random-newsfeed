@@ -1,5 +1,6 @@
 const Post = require( "../models/Post.model" ),
   PostCategory = require( "../models/PostCategory.model" ),
+  User = require( "../models/User.model" ),
   PostMeta = require( "../models/PostMeta.model" );
 
 const xlsx = require("xlsx"); 
@@ -56,4 +57,12 @@ module.exports = {
     }
     res.send("success");
   },
+
+  "importUser": async ( req, res ) => {
+    const checkUserExist = await User.findOne( req.params.id );
+
+    if ( checkUserExist ) {
+      
+    }
+  }
 }
