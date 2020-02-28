@@ -15,12 +15,7 @@ module.exports = {
         localField: '_postCategory',
         foreignField: '_id',
         as: '_postCategory' 
-      } },
-      // {                     // Limit field wanna response
-      //   "$project": {
-      //     "_postCategory.uuid": 1
-          
-      // } }
+      } }
     ] )
     res.send( findPost );
   },

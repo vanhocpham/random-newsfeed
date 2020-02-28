@@ -14,6 +14,10 @@ const mongoose = require( "mongoose" ),
     "email": String,
     "password": String,
     "phone": String,
+    "_friends": [{
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    }]
   } );
 
 UserSchema.pre( "save", async function ( next ) {

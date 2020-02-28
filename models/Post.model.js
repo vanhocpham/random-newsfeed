@@ -20,7 +20,6 @@ const mongoose = require( "mongoose" ),
     "categoryId": Number,
     "topicId": Number,
     "authorId": Number,
-    "authorId": String,
     "slugs": String,
     "photo": String,
     "thumb": String,
@@ -39,6 +38,10 @@ const mongoose = require( "mongoose" ),
     "viewYear": Number,
     "releaseTime": String,
     "outdatedAt": String,
+    "author": {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
+    },
     "_postCategory": {
       "type": Schema.Types.ObjectId,
       "ref": "PostCategory"
