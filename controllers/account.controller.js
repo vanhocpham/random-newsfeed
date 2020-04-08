@@ -8,7 +8,7 @@ module.exports = {
         return req.status( 403 ).send( { "status": "error", "data": "User not found!"} );
       }
 
-      return req.status( 403 ).send( { "status": "error", "data": "User not found!"} );
+      return req.status( 200 ).send( { "status": "success", "data": findUser} );
     }
     
   },
